@@ -56,11 +56,11 @@ public class LoginViewControler {
         if (esAdministrador(usuario, password)) {
             // Las credenciales corresponden a un administrador, puedes abrir la ventana del administrador
             // Lógica para abrir la ventana del administrador...
-            JOptionPane.showMessageDialog(null, "Inicio de correcto para Administrador", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Inicio  correcto para Administrador", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
         } else if (esVendedor(usuario, password)) {
             // Las credenciales corresponden a un vendedor, puedes abrir la ventana del vendedor
-            JOptionPane.showMessageDialog(null, "Inicio de correcto para Vendedor", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Inicio  correcto para Vendedor", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             //abrirVentanaVendedor();
             // Lógica para abrir la ventana del vendedor...
