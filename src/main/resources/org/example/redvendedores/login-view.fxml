@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.redvendedores.controlador.LoginViewControler">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c0a7c7" height="369.0" layoutX="27.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" width="349.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a7a9c7" height="46.0" layoutX="44.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a7a9c7" height="102.0" layoutX="41.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" width="312.0" />
+      <Label fx:id="lblUsuario" layoutX="64.0" layoutY="194.0" text="Usuario:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPassword" layoutX="66.0" layoutY="231.0" text="Contraseña:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsuario" layoutX="171.0" layoutY="191.0" promptText="Digite su usuario" stylesheets="@tema.css">
+         <styleClass>
+            <String fx:value="content" />
+            <String fx:value="arrow-button" />
+         </styleClass>
+      </TextField>
+      <PasswordField fx:id="psdPassword" layoutX="171.0" layoutY="228.0" promptText="Digite su contraseña" />
+      <Button fx:id="btnLogin" layoutX="56.0" layoutY="309.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="25.0" prefWidth="125.0" styleClass="tooltip" stylesheets="@tema.css" text="Iniciar Sesion">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnCancelar" layoutX="286.0" layoutY="309.0" mnemonicParsing="false" onAction="#cancelar" styleClass="tooltip" stylesheets="@tema.css" text="Cancelar">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lblUsuario1" layoutX="98.0" layoutY="56.0" text="Red de vendedores">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
