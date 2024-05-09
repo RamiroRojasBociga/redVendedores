@@ -62,8 +62,9 @@ public class LoginViewControler {
             // Las credenciales corresponden a un vendedor, puedes abrir la ventana del vendedor
             JOptionPane.showMessageDialog(null, "Inicio  correcto para Vendedor", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
-            //abrirVentanaVendedor();
-            // Lógica para abrir la ventana del vendedor...
+            // Lógica para abrir la ventana del vendedor..
+            abrirVentanaVendedor();
+
         } else {
             // Las credenciales son inválidas, muestra un mensaje de error
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
@@ -99,23 +100,24 @@ public class LoginViewControler {
     }
     private void abrirVentanaVendedor() {
         try {
-            // Cargar el archivo FXML de la vista del vendedor
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("vendedor-view.fxml"));
-            Parent root = loader.load();
+            // Cargar el archivo FXML de la ventana del vendedor
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/redvendedores/vendedor-view.fxml"));
+            Parent root = fxmlLoader.load();
 
-            // Crear una nueva escena
-            Scene scene = new Scene(root);
-
-            // Obtener la ventana actual
-            Stage stage = (Stage) btnLogin.getScene().getWindow();
-
-            // Establecer la nueva escena en la ventana y mostrarla
-            stage.setScene(scene);
+            // Crear una nueva escena y configurarla en el escenario
+            Stage stage = new Stage();
+            stage.setTitle("Ventana Vendedor");
+            stage.setScene(new Scene(root));
             stage.show();
+
+            // Cerrar la ventana de login
+            Stage loginStage = (Stage) btnLogin.getScene().getWindow();
+            loginStage.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void initData(RedVendedores redVendedores) {
         this.redVendedores = redVendedores;

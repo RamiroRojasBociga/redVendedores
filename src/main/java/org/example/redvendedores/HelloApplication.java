@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.redvendedores.controlador.LoginViewControler;
+import org.example.redvendedores.controlador.VendedorViewControler;
 import org.example.redvendedores.modelo.RedVendedores;
 
 import java.io.IOException;
