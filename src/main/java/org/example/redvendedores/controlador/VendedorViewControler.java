@@ -1,35 +1,17 @@
 package org.example.redvendedores.controlador;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import org.example.redvendedores.modelo.RedVendedores;
+import javafx.scene.control.Tab;
 
 public class VendedorViewControler {
 
     @FXML
-    private Label lblApellido;
+    private Tab contactosTab;
 
     @FXML
-    private Label lblId;
+    private Tab muroTab;
 
     @FXML
-    private Label lblNombre;
+    private Tab productosTab;
 
-    @FXML
-    private TextField txfApellido;
-
-    @FXML
-    private TextField txfIdentificacion;
-
-    @FXML
-    private TextField txfNombre;
-
-    @FXML
-    private Label txfTitulo;
-
-
-    public void initData(RedVendedores redVendedores) {
-    }
 }
-

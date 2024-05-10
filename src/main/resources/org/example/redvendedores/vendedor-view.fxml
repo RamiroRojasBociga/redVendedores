@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.redvendedores.controlador.VendedorViewControler">
-   <children>
-      <Label fx:id="txfTitulo" layoutX="269.0" layoutY="32.0" text="VENDEDOR" />
-      <Label fx:id="lblNombre" layoutX="11.0" layoutY="67.0" text="Nombre:" />
-      <Label fx:id="lblApellido" layoutX="215.0" layoutY="67.0" text="Apellido:" />
-      <Label fx:id="lblId" layoutX="426.0" layoutY="67.0" text="Id:" />
-      <TextField fx:id="txfNombre" layoutX="61.0" layoutY="63.0" prefHeight="25.0" prefWidth="123.0" />
-      <TextField fx:id="txfApellido" layoutX="265.0" layoutY="63.0" prefHeight="25.0" prefWidth="123.0" />
-      <TextField fx:id="txfIdentificacion" layoutX="442.0" layoutY="63.0" />
-   </children>
-</AnchorPane>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.redvendedores.controlador.VendedorViewControler">
+   <tabs>
+      <Tab text="Muro" fx:id="muroTab">
+         <!-- Esta pestaña se enlazará a la vista del muro -->
+      </Tab>
+      <Tab text="Contactos" fx:id="contactosTab">
+         <content>
+            <fx:include source="contactos-view.fxml" fx:id="contactosView" />
+         </content>
+      </Tab>
+      <Tab text="Sus Productos" fx:id="productosTab">
+         <!-- Esta pestaña se enlazará a la vista de los productos del vendedor -->
+      </Tab>
+   </tabs>
+</TabPane>
