@@ -58,6 +58,7 @@ public class LoginViewControler {
             // Lógica para abrir la ventana del administrador...
             JOptionPane.showMessageDialog(null, "Inicio  correcto para Administrador", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
+            abrirVentanaAdministrador();
         } else if (esVendedor(usuario, password)) {
             // Las credenciales corresponden a un vendedor, puedes abrir la ventana del vendedor
             JOptionPane.showMessageDialog(null, "Inicio  correcto para Vendedor", "Éxito", JOptionPane.INFORMATION_MESSAGE);
@@ -70,6 +71,8 @@ public class LoginViewControler {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+
+
 
     private boolean esAdministrador(String usuario, String password) {
         for (Administrador admin : redVendedores.getAdministradores()) {
@@ -97,6 +100,25 @@ public class LoginViewControler {
             }
         }
         return false; // No se encontraron credenciales coincidentes
+    }
+    private void abrirVentanaAdministrador() {
+        try {
+            // Cargar el archivo FXML de la ventana del vendedor
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/redvendedores/administrador-view.fxml"));
+            Parent root = fxmlLoader.load();
+
+            // Crear una nueva escena y configurarla en el escenario
+            Stage stage = new Stage();
+            stage.setTitle("Ventana Administrador");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            // Cerrar la ventana de login
+            Stage loginStage = (Stage) btnLogin.getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void abrirVentanaVendedor() {
         try {
