@@ -5,7 +5,7 @@ import org.example.redvendedores.enumm.EstadoProducto;
 import org.example.redvendedores.estructuras.ListaSimple;
 
 public class RedVendedores {
-
+    private static RedVendedores instance;
     private ListaSimple<Vendedor> vendedores;
     private ListaSimple<Administrador> administradores;
 
@@ -15,6 +15,13 @@ public class RedVendedores {
         // Inicializar la lista de vendedores y administradores
         inicializarVendedores();
         inicializarAdministradores();
+    }
+    // Método estático para obtener la instancia única de RedVendedores
+    public static RedVendedores getInstance() {
+        if (instance == null) {
+            instance = new RedVendedores();
+        }
+        return instance;
     }
 
     private void inicializarAdministradores() {

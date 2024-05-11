@@ -9,6 +9,10 @@ public class Vendedor extends Persona {
     private ListaSimple<Vendedor> contactos;
     private ListaSimple<Publicacion> muro;
     private ListaSimple<Conversacion> chat;
+    public Vendedor() {
+
+    }
+
 
     public Vendedor(String nombre, String apellido, String identificacion, String direccion, String nombreUsuario, String password, ListaSimple<Producto> productos, ListaSimple<Vendedor> contactos, ListaSimple<Publicacion> muro, ListaSimple<Conversacion> chat) {
         super(nombre, apellido, identificacion, direccion, nombreUsuario, password);
