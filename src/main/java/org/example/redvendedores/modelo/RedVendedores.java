@@ -13,14 +13,18 @@ public class RedVendedores {
     private static RedVendedores instance;
     private ListaSimple<Vendedor> vendedores;
     private ListaSimple<Administrador> administradores;
+    private ListaSimple<Contacto> contactos; // Nueva lista para almacenar los contactos
+
 
     public RedVendedores() {
         this.vendedores = new ListaSimple<>();
         this.administradores = new ListaSimple<>();
+        this.contactos = new ListaSimple<>(); // Agrega esta línea para inicializar la lista de contactos
         // Inicializar la lista de vendedores y administradores
         inicializarVendedores();
         inicializarAdministradores();
     }
+
     // Método estático para obtener la instancia única de RedVendedores
     public static RedVendedores getInstance() {
         if (instance == null) {
@@ -40,13 +44,13 @@ public class RedVendedores {
     private void inicializarVendedores() {
         // Crear vendedores de ejemplo
         ListaSimple<Producto> productosVendedor1 = new ListaSimple<>();
-        ListaSimple<Vendedor> contactosVendedor1 = new ListaSimple<>();
+        ListaSimple<Contacto> contactosVendedor1 = new ListaSimple<>();
         ListaSimple<Publicacion> muroVendedor1 = new ListaSimple<>();
         ListaSimple<Conversacion> chatVendedor1 = new ListaSimple<>();
         Vendedor vendedor1 = new Vendedor("Ramiro", "Rojas", "987654321", "Avenida Central", "ramiro", "12345", productosVendedor1, contactosVendedor1, muroVendedor1, chatVendedor1);
 
         ListaSimple<Producto> productosVendedor2 = new ListaSimple<>();
-        ListaSimple<Vendedor> contactosVendedor2 = new ListaSimple<>();
+        ListaSimple<Contacto> contactosVendedor2 = new ListaSimple<>();
         ListaSimple<Publicacion> muroVendedor2 = new ListaSimple<>();
         ListaSimple<Conversacion> chatVendedor2 = new ListaSimple<>();
         Vendedor vendedor2 = new Vendedor("Pablo", "Castaño", "234567890", "Calle Secundaria", "pablo", "password", productosVendedor2, contactosVendedor2, muroVendedor2, chatVendedor2);
@@ -74,8 +78,17 @@ public class RedVendedores {
     public void agregarVendedor(Vendedor vendedor) {
         this.vendedores.agregarFinal(vendedor);
     }
+    public void agregarContacto(Contacto contacto) {
+        this.contactos.agregarFinal(contacto);
+    }
+
 
     public ListaSimple<Administrador> getAdministradores() {
+
         return administradores;
+    }
+
+    public ListaSimple<Contacto> getContactos() {
+        return contactos;
     }
 }

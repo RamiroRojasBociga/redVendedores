@@ -6,15 +6,16 @@ import java.util.List;
 
 public class Vendedor extends Persona {
     private ListaSimple<Producto> productos;
-    private ListaSimple<Vendedor> contactos;
+    private ListaSimple<Contacto> contactos;
     private ListaSimple<Publicacion> muro;
     private ListaSimple<Conversacion> chat;
+
     public Vendedor() {
 
     }
 
 
-    public Vendedor(String nombre, String apellido, String identificacion, String direccion, String nombreUsuario, String password, ListaSimple<Producto> productos, ListaSimple<Vendedor> contactos, ListaSimple<Publicacion> muro, ListaSimple<Conversacion> chat) {
+    public Vendedor(String nombre, String apellido, String identificacion, String direccion, String nombreUsuario, String password, ListaSimple<Producto> productos, ListaSimple<Contacto> contactos, ListaSimple<Publicacion> muro, ListaSimple<Conversacion> chat) {
         super(nombre, apellido, identificacion, direccion, nombreUsuario, password);
         this.productos = productos;
         this.contactos = contactos;
@@ -30,11 +31,11 @@ public class Vendedor extends Persona {
         this.productos = productos;
     }
 
-    public ListaSimple<Vendedor> getContactos() {
+    public ListaSimple<Contacto> getContactos() {
         return contactos;
     }
 
-    public void setContactos(ListaSimple<Vendedor> contactos) {
+    public void setContactos(ListaSimple<Contacto> contactos) {
         this.contactos = contactos;
     }
 

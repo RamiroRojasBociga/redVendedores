@@ -213,6 +213,7 @@ public class ListaSimple<T> implements Iterable<T> {
 		
 	}
 
+
 	//Metodos get y set de la clase ListaSimple
 	
 	
