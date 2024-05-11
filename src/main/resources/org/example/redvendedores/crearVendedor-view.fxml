@@ -25,7 +25,7 @@
 
     <Button fx:id="btnCrearVendedor" layoutX="250.0" layoutY="350.0" onAction="#crearVendedor" text="Crear Vendedor" />
 
-    <!-- Botón para volver al administrador -->
+
     <Button fx:id="btnVolver" layoutX="416.0" layoutY="350.0" onAction="#volverAlAdministrador" text="Volver al Administrador" />
 
 </AnchorPane>

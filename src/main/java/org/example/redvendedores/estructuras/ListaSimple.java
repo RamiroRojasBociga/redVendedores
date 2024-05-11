@@ -1,5 +1,7 @@
 package org.example.redvendedores.estructuras;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ListaSimple<T> implements Iterable<T> {
