@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.redvendedores.controlador.AdministrarRedControler"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Botón para abrir la ventana de crear vendedor -->
+    <Button fx:id="btnAbrirCrearVendedor" layoutX="50.0" layoutY="50.0" onAction="#abrirVentanaCrearVendedor" text="Crear Vendedor" />
+
+    <!-- Botones adicionales para administrar la red -->
+    <Button fx:id="btnEliminarVendedor" layoutX="50.0" layoutY="100.0" onAction="#eliminarVendedor" text="Eliminar Vendedor" />
+    <Button fx:id="btnVerEstadisticas" layoutX="50.0" layoutY="150.0" onAction="#verEstadisticas" text="Ver Estadísticas" />
+
+    <!-- Lista de vendedores -->
+    <Label text="Vendedores:" layoutX="300.0" layoutY="50.0" />
+    <ListView fx:id="listViewVendedores" layoutX="300.0" layoutY="70.0" prefHeight="250.0" prefWidth="250.0" />
+
+</AnchorPane>

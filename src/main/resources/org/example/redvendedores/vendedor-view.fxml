@@ -3,7 +3,7 @@
 <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.redvendedores.controlador.VendedorViewControler">
    <tabs>
       <Tab text="Muro" fx:id="muroTab">
-         <!-- Esta pestaña se enlazará a la vista del muro -->
+
       </Tab>
       <Tab text="Contactos" fx:id="contactosTab">
          <content>
@@ -11,7 +11,7 @@
          </content>
       </Tab>
       <Tab text="Sus Productos" fx:id="productosTab">
-         <!-- Esta pestaña se enlazará a la vista de los productos del vendedor -->
+
       </Tab>
    </tabs>
 </TabPane>

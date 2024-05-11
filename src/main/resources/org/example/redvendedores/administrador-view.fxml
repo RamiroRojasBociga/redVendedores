@@ -8,8 +8,8 @@
          xmlns:fx="http://javafx.com/fxml"
          fx:controller="org.example.redvendedores.controlador.AdministradorViewControler">
     <tabs>
-        <Tab text="Administrar Red">
-
+        <Tab text="Administrar Red" fx:id="administrarRedTab">
+            <fx:include source="administrarRed-view.fxml" fx:id="administrarRedView" />
         </Tab>
         <Tab text="Estadísticas de la Red">
 
