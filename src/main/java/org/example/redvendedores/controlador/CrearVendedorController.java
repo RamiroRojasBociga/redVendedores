@@ -2,15 +2,25 @@ package org.example.redvendedores.controlador;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.example.redvendedores.modelo.RedVendedores;
 import org.example.redvendedores.modelo.Vendedor;
+
+import java.io.IOException;
 
 public class CrearVendedorController {
 
     @FXML
     private Button btnCrearVendedor;
+
+    @FXML
+    private Button btnVolver; // Nuevo botón agregado
 
     @FXML
     private TextField txtApellido;
@@ -53,6 +63,7 @@ public class CrearVendedorController {
         limpiarCampos();
     }
 
+
     // Método para limpiar los campos de texto después de crear un nuevo vendedor
     private void limpiarCampos() {
         txtNombre.clear();
@@ -61,5 +72,22 @@ public class CrearVendedorController {
         txtDireccion.clear();
         txtUsuario.clear();
         txtContraseña.clear();
+    }
+
+    @FXML
+    void volverAlAdministrador(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/redvendedores/administrarRed-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            // Cerrar la ventana actual
+            Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
