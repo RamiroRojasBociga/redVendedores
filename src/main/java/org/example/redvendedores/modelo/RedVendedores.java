@@ -4,7 +4,12 @@ import org.example.redvendedores.enumm.CategoriaProducto;
 import org.example.redvendedores.enumm.EstadoProducto;
 import org.example.redvendedores.estructuras.ListaSimple;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RedVendedores {
+
+
     private static RedVendedores instance;
     private ListaSimple<Vendedor> vendedores;
     private ListaSimple<Administrador> administradores;
