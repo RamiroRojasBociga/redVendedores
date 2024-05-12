@@ -54,4 +54,5 @@ public class Vendedor extends Persona {
     public void setChat(ListaSimple<Conversacion> chat) {
         this.chat = chat;
     }
+
 }
