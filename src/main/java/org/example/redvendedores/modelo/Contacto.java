@@ -47,9 +47,10 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "nombre:" + nombre +
-                "\napellido:" + apellido +
-                "\nidentificacion:" + numeroDocumento +
-                "\nTelefono:" + numeroTelefono;
+        return "Contacto: " +
+                "\nnombre: " + nombre +
+                "\napellido: " + apellido +
+                "\nnumeroDocumento: " + numeroDocumento +
+                "\nnumeroTelefono: " + numeroTelefono;
     }
 }

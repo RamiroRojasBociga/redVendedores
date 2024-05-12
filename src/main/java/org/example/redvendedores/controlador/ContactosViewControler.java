@@ -4,9 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.redvendedores.estructuras.ListaSimple;
 import org.example.redvendedores.modelo.Contacto;
 import org.example.redvendedores.modelo.RedVendedores;
@@ -20,7 +19,19 @@ public class ContactosViewControler {
     private Button btnAgregarContacto;
 
     @FXML
-    private ListView<Contacto> listViewContactos;
+    private TableView<Contacto> tableViewContactos;
+
+    @FXML
+    private TableColumn<Contacto, String> colNombre;
+
+    @FXML
+    private TableColumn<Contacto, String> colApellido;
+
+    @FXML
+    private TableColumn<Contacto, String> colIdentificacion;
+
+    @FXML
+    private TableColumn<Contacto, String> colTelefono;
 
     @FXML
     private TextField txtNombre;
@@ -37,11 +48,14 @@ public class ContactosViewControler {
 
     @FXML
     void initialize() {
-        // Obtener la lista de contactos desde RedVendedores
-        ObservableList<Contacto> contactosObservable = obtenerListaObservableContactos();
+        // Configurar las columnas del TableView
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        colIdentificacion.setCellValueFactory(new PropertyValueFactory<>("numeroDocumento")); // Cambiado de "identificacion"
+        colTelefono.setCellValueFactory(new PropertyValueFactory<>("numeroTelefono")); // Cambiado de "telefono"
 
-        // Configurar la lista en la ListView
-        listViewContactos.setItems(contactosObservable);
+        // Obtener la lista de contactos desde RedVendedores y configurarla en el TableView
+        tableViewContactos.setItems(obtenerListaObservableContactos());
     }
 
     private ObservableList<Contacto> obtenerListaObservableContactos() {
@@ -80,7 +94,7 @@ public class ContactosViewControler {
             RedVendedores.getInstance().getContactos().imprimirLista();
 
             // Actualizar la lista observable con los nuevos datos
-            listViewContactos.setItems(obtenerListaObservableContactos());
+            tableViewContactos.setItems(obtenerListaObservableContactos());
 
             // Limpiar los campos de texto
             limpiarCampos();
