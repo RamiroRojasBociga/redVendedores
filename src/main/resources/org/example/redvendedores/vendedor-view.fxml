@@ -11,7 +11,9 @@
          </content>
       </Tab>
       <Tab text="Sus Productos" fx:id="productosTab">
-
+         <content>
+            <fx:include source="productos-view.fxml" fx:id="productosView" />
+         </content>
       </Tab>
    </tabs>
 </TabPane>

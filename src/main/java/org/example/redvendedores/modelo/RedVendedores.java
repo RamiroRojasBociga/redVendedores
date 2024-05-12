@@ -1,11 +1,9 @@
 package org.example.redvendedores.modelo;
 
+import javafx.scene.image.Image;
 import org.example.redvendedores.enumm.CategoriaProducto;
 import org.example.redvendedores.enumm.EstadoProducto;
 import org.example.redvendedores.estructuras.ListaSimple;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RedVendedores {
 
@@ -60,10 +58,15 @@ public class RedVendedores {
         Producto producto2 = new Producto("Producto 2", "imagen2.jpg", CategoriaProducto.DEPORTES, 150.0, EstadoProducto.PUBLICADO);
         Producto producto3 = new Producto("Producto 3", "imagen3.jpg", CategoriaProducto.HOGAR, 200.0, EstadoProducto.PUBLICADO);
 
+        String rutaImagenMotocicleta = "/org/example/redvendedores/imagenes/MotocicletaAzul.jpg";
+        Image imagenMotocicleta = new Image(getClass().getResourceAsStream(rutaImagenMotocicleta));
+        Producto motocicletaAzul = new Producto("Motocicleta Azul", rutaImagenMotocicleta, CategoriaProducto.TECNOLOGIA, 1500.0, EstadoProducto.PUBLICADO);
+
         // Agregar productos al vendedor
         productosVendedor1.agregarFinal(producto1);
         productosVendedor1.agregarFinal(producto2);
         productosVendedor1.agregarFinal(producto3);
+        productosVendedor1.agregarFinal(motocicletaAzul);
 
         // Agregar vendedores a la lista
         this.vendedores.agregarFinal(vendedor1);
@@ -90,5 +93,23 @@ public class RedVendedores {
 
     public ListaSimple<Contacto> getContactos() {
         return contactos;
+    }
+
+    public ListaSimple<Producto> getProductos() {
+        ListaSimple<Producto> productos = new ListaSimple<>();
+
+        // Recorrer la lista de vendedores y obtener sus productos
+        for (Vendedor vendedor : vendedores) {
+            ListaSimple<Producto> productosVendedor = vendedor.getProductos();
+            // Verificar si la lista de productos del vendedor no está vacía antes de agregar elementos
+            if (productosVendedor != null) {
+                // Agregar cada producto del vendedor a la lista de productos de la red
+                for (Producto producto : productosVendedor) {
+                    productos.agregarFinal(producto);
+                }
+            }
+        }
+
+        return productos;
     }
 }
