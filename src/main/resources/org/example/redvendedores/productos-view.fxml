@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.redvendedores.controlador.ProductosViewControler"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <TableView fx:id="tableViewProductos" layoutX="20.0" layoutY="90.0" prefHeight="295.0" prefWidth="560.0">
+        <columns>
+            <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+            <TableColumn fx:id="colImagen" prefWidth="150.0" text="Imagen" />
+            <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoría" />
+            <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio" />
+            <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
+        </columns>
+    </TableView>
+
+</AnchorPane>
