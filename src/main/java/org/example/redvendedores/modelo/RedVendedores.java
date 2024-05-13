@@ -55,8 +55,8 @@ public class RedVendedores {
 
         // Crear productos de ejemplo
         Producto producto1 = new Producto("Producto 1", "imagen1.jpg", CategoriaProducto.DEPORTES, 100.0, EstadoProducto.PUBLICADO);
-        Producto producto2 = new Producto("Producto 2", "imagen2.jpg", CategoriaProducto.DEPORTES, 150.0, EstadoProducto.PUBLICADO);
-        Producto producto3 = new Producto("Producto 3", "imagen3.jpg", CategoriaProducto.HOGAR, 200.0, EstadoProducto.PUBLICADO);
+        //Producto producto2 = new Producto("Producto 2", "imagen2.jpg", CategoriaProducto.DEPORTES, 150.0, EstadoProducto.PUBLICADO);
+        //Producto producto3 = new Producto("Producto 3", "imagen3.jpg", CategoriaProducto.HOGAR, 200.0, EstadoProducto.PUBLICADO);
 
         String rutaImagenMotocicleta = "/org/example/redvendedores/imagenes/MotocicletaAzul.jpg";
         Image imagenMotocicleta = new Image(getClass().getResourceAsStream(rutaImagenMotocicleta));
@@ -64,8 +64,8 @@ public class RedVendedores {
 
         // Agregar productos al vendedor
         productosVendedor1.agregarFinal(producto1);
-        productosVendedor1.agregarFinal(producto2);
-        productosVendedor1.agregarFinal(producto3);
+        //productosVendedor1.agregarFinal(producto2);
+        //productosVendedor1.agregarFinal(producto3);
         productosVendedor1.agregarFinal(motocicletaAzul);
 
         // Agregar vendedores a la lista
