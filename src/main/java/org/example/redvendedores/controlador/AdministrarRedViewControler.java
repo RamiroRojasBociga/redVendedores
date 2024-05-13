@@ -17,7 +17,7 @@ import org.example.redvendedores.modelo.Vendedor;
 
 import java.io.IOException;
 
-public class AdministrarRedControler {
+public class AdministrarRedViewControler {
 
     @FXML
     private TableView<Vendedor> tableViewVendedores;

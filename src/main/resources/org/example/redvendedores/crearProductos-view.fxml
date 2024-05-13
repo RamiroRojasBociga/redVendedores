@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.redvendedores.controlador.CrearProductosViewControler">
+
+    <Label layoutX="50.0" layoutY="50.0" text="Nombre:" />
+    <TextField fx:id="txtNombre" layoutX="150.0" layoutY="50.0" />
+
+    <Label layoutX="50.0" layoutY="100.0" text="Imagen" />
+    <TextField fx:id="txtApellido" layoutX="150.0" layoutY="100.0" />
+
+    <Label layoutX="50.0" layoutY="150.0" text="Precio" />
+    <TextField fx:id="txtCedula" layoutX="150.0" layoutY="150.0" />
+
+    <Button fx:id="btnCrearProducto" layoutX="250.0" layoutY="350.0" onAction="#crearProducto" text="Crear Producto" />
+
+
+    <Button fx:id="btnVolver" layoutX="416.0" layoutY="350.0" onAction="#volverAVendedor" text="Volver " />
+   <ComboBox fx:id="cbCategoria" layoutX="150.0" layoutY="200.0" prefWidth="150.0" />
+   <ComboBox fx:id="cbEstado" layoutX="150.0" layoutY="250.0" prefWidth="150.0" />
+   <Label layoutX="47.0" layoutY="204.0" text="Categoria" />
+   <Label layoutX="52.0" layoutY="254.0" text="Estado" />
+
+</AnchorPane>
